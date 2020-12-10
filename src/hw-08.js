@@ -23,6 +23,9 @@ lightBox.addEventListener("click", toCloseModal);
 
 function onClickGalleryContainer(event) {
   event.preventDefault();
+  if (event.target.nodeName !== "IMG") {
+    return;
+  }
   lightBox.classList.add("is-open");
   modalImage.src = event.target.dataset.source;
   modalImage.alt = event.target.alt;
